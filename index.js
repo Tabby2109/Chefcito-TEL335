@@ -1,14 +1,34 @@
-const express = require('express')
-const app = express()
-const port = 3000
+const form = document.getElementById("myForm");
 
-app.use(express.json())
+form.addEventListener("submit", (event) => {
+  event.preventDefault();
 
-app.get('/', (req, res) => res.send('Hello World!'))
+  const nombre = document.getElementById("nombre").value;
+  const apellido = document.getElementById("apellido").value;
+  const mail = document.getElementById("mail").value;
+  const contrasena = document.getElementById("contrasena").value;
+  const edad = document.getElementById("edad").value;
 
-app.post('/', (req, res) => {
-    console.log(req.body)
-    res.json({ success: true })
-})
+  const data = {
+    nombre: nombre,
+    apellido: apellido,
+    mail: mail,
+    contrasena: contrasena,
+    edad: edad,
+  };
 
-app.listen(port, () => console.log(`Example app listening at http://localhost:3000`))
+  fetch("/users", {
+    method: "POST",
+    headers: {
+      "Content-Type": "application/json",
+    },
+    body: JSON.stringify(data),
+  })
+    .then((response) => response.json())
+    .then((data) => {
+      console.log("Success:", data);
+    })
+    .catch((error) => {
+      console.error("Error:", error);
+    });
+});
