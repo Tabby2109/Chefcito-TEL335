@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>Chefsito - Registro de usuarios</title>
+  </head>
+  <body>
+    <h1>Chefsito - Registro de usuarios</h1>
+    <form id="formulario">
+      <div>
+        <label for="nombre">Nombre:</label>
+        <input type="text" id="nombre" name="nombre" />
+      </div>
+      <div>
+        <label for="apellido">Apellido:</label>
+        <input type="text" id="apellido" name="apellido" />
+      </div>
+      <div>
+        <label for="email">Email:</label>
+        <input type="email" id="email" name="email" />
+      </div>
+      <div>
+        <label for="password">Contraseña:</label>
+        <input type="password" id="password" name="password" />
+      </div>
+      <div>
+        <label for="edad">Edad:</label>
+        <input type="number" id="edad" name="edad" />
+      </div>
+      <button type="submit">Enviar</button>
+    </form>
+
+    <h2>Usuarios registrados</h2>
+    <table id="tablaUsuarios">
+      <thead>
+        <tr>
+          <th>Nombre</th>
+          <th>Apellido</th>
+          <th>Email</th>
+          <th>Edad</th>
+        </tr>
+      </thead>
+      <tbody></tbody>
+    </table>
+
+    <script>
+      const formulario = document.getElementById("formulario");
+      const tablaUsuarios = document.getElementById("tablaUsuarios");
+      let usuarios = [];
+
+      function agregarUsuario(nombre, apellido, email, edad) {
+        usuarios.push({
+          nombre,
+          apellido,
+          email,
+          edad,
+        });
+      }
+
+      function renderizarUsuarios() {
+        const filasUsuarios = usuarios
+          .map(
+            (usuario) =>
+              `<tr>
+                <td>${usuario.nombre}</td>
+                <td>${usuario.apellido}</td>
+                <td>${usuario.email}</td>
+                <td>${usuario.edad}</td>
+              </tr>`
+          )
+          .join("");
+
+        tablaUsuarios.querySelector("tbody").innerHTML = filasUsuarios;
+      }
+
+      formulario.addEventListener("submit", (event) => {
+        event.preventDefault();
+        const nombre = document.getElementById("nombre").value;
+        const apellido = document.getElementById("apellido").value;
+        const email = document.getElementById("email").value;
+        const password = document.getElementById("password").value;
+        const edad = document.getElementById("edad").value;
+
+        agregarUsuario(nombre, apellido, email, edad);
+        renderizarUsuarios();
+        formulario.reset();
+      });
+    </script>
+  </body>
+</html>
+
+
