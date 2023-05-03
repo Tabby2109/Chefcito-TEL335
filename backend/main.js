@@ -17,6 +17,8 @@ client.connect(function(err) {
     const administrador = db.collection("administrador");
     const usuario_administrador = db.collection("usuario_administrador");
     const publicacion = db.collection("publicacion");
+    const producto = db.collection("producto");
+    const compra = db.collection("compra");
 
     // Creación de índices únicos
     users.createIndex({ "ID_Usuario": 1 }, { unique: true });
@@ -24,6 +26,8 @@ client.connect(function(err) {
     administrador.createIndex({ "ID_Administrador": 1 }, { unique: true });
     usuario_administrador.createIndex({ "ID_Usuario_Administrador": 1 }, { unique: true });
     publicacion.createIndex({ "ID_Publicacion": 1 }, { unique: true });
+    producto.createIndex({ "ID_Producto": 1 }, { unique: true });
+    compra.createIndex({ "ID_Compra": 1 }, { unique: true });
 
     // Funciones de creación de documentos
     function create_user(nombre, apellido, mail, contrasena, edad) {
@@ -66,5 +70,45 @@ client.connect(function(err) {
       };
       return publicacion.insertOne(publicacion_doc);
     }
+
+    function create_producto(nombre, descripcion, precio, cantidad) {
+      const producto_doc = {
+        "Nombre": nombre,
+        "Descripcion": descripcion,
+        "Precio": precio,
+        "Cantidad": cantidad
+      };
+      return producto.insertOne(producto_doc);
+    }
+
+    function create_compra(id_cliente, id_producto, cantidad) {
+      const compra_doc = {
+        "ID_Cliente": id_cliente,
+        "ID_Producto": id_producto,
+        "Cantidad": cantidad
+      };
+      return compra.insertOne(compra_doc);
+    }
+
+    // Uso de las funciones
+    create_user("Juan", "Perez", "juan@gmail.com", "abc123", 30)
+      .then(result => console.log(result))
+      .catch(error => console.error(error));
+
+    create_cliente("id_usuario_1")
+      .then(result => console.log(result))
+      .catch(error => console.error(error));
+
+    create_administrador("id_usuario_2")
+      .then(result => console.log(result))
+      .catch(error => console.error(error));
+
+    asignar_administrador("id_usuario_1", "id_administrador_1")
+      .then(result => console.log(result))
+      .catch(error => console.error(error));
+
+    create_publicacion("id_usuario_1", "id_publicacion_1")
+      .then(result => console.log(result))
+      .catch(error => console.error(error));
   }
 });
