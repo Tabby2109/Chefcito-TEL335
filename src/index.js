@@ -27,7 +27,7 @@ const database = module.exports = async () => {
 
         await mongoose.connect(
             
-            'mongodb://Roshar:XCACrX3siiL9WoUJ@ac-wvk5edf-shard-00-00.j4xhw9s.mongodb.net:27017,ac-wvk5edf-shard-00-01.j4xhw9s.mongodb.net:27017,ac-wvk5edf-shard-00-02.j4xhw9s.mongodb.net:27017/?ssl=true&replicaSet=atlas-147a0g-shard-0&authSource=admin&retryWrites=true&w=majority',
+            'mongodb://chefsito-tel335:password.@ac-jgnnfqc-shard-00-00.jhwkbow.mongodb.net:27017,ac-jgnnfqc-shard-00-01.jhwkbow.mongodb.net:27017,ac-jgnnfqc-shard-00-02.jhwkbow.mongodb.net:27017/?ssl=true&replicaSet=atlas-4wck24-shard-0&authSource=admin&retryWrites=true&w=majority',
             
             connectionParams
             

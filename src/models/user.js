@@ -5,6 +5,10 @@ const userSchema = mongoose.Schema({
         type: String,
         required: true,
     },
+    lastname: {
+        type: String,
+        required: true,
+    },
     age: {
         type: Number,
         required: true,
@@ -12,6 +16,7 @@ const userSchema = mongoose.Schema({
     email: {
         type: String,
         required: true,
+        unique: true,
     },
     pass: {
         type: String,
