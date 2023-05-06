@@ -10,7 +10,7 @@ app.use('/api', userRoutes);
 
 
 app.get('/', (req,res) => {
-    res.send("welcome to my API");
+    res.send("Bienvenido, Rey");
 });
 
 const database = module.exports = async () => {
