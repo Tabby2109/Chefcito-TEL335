@@ -29,20 +29,20 @@ GET http://localhost:3000/api/users HTTP/1.1
 
 ###
 // Obtener un usuario según su ID
-GET http://localhost:3000/api/users/6451f93f816819e844f048da HTTP/1.1
+GET http://localhost:3000/api/users/6456b5ed0affcf41d0f30a7f  HTTP/1.1
 
 ###
 // Actualizar un usuario según su ID
-PUT http://localhost:3000/api/users/6451f962816819e844f048df HTTP/1.1
+PUT http://localhost:3000/api/users/6456b5ed0affcf41d0f30a7f  HTTP/1.1
 Content-Type: application/json
 
 {
     "name": "pepe",
-    "lastname": "fernandez",
+    "lastname": "contreras",
     "age": "20",
     "email": "pepe20@gmail.com",
     "pass": "password"
 }
 
 ###
-DELETE http://localhost:3000/api/users/6451f93f816819e844f048da HTTP/1.1
+DELETE http://localhost:3000/api/users/6456b5ed0affcf41d0f30a7f HTTP/1.1

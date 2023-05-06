@@ -1,6 +1,7 @@
 const express = require('express');
 const mongoose = require ("mongoose");
 const userRoutes = require("./routes/user");
+require("dotenv").config();
 
 const app = express();
 const port = 3000;
@@ -27,19 +28,19 @@ const database = module.exports = async () => {
 
         await mongoose.connect(
             
-            'mongodb://chefsito-tel335:password.@ac-jgnnfqc-shard-00-00.jhwkbow.mongodb.net:27017,ac-jgnnfqc-shard-00-01.jhwkbow.mongodb.net:27017,ac-jgnnfqc-shard-00-02.jhwkbow.mongodb.net:27017/?ssl=true&replicaSet=atlas-4wck24-shard-0&authSource=admin&retryWrites=true&w=majority',
+            process.env.MONGODB_URI,
             
             connectionParams
             
             );
 
-        console.log('Se conecto compare mio');
+        console.log('Conexión establecida');
 
     } catch (error) {
 
         console.log(error);
 
-        console.log("fallo la conexion compare mio");
+        console.log("falló la conexión");
 
     }
 
