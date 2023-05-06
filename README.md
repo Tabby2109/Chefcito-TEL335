@@ -4,7 +4,7 @@
 
 | **Miembros del Equipo** | **Rol del Alumno** |
 |------------------|--------------------|
-| a | 0 |
+| Rodrigo Contreras Vega | 202010519-7 |
 | Tabata Ahumada Avendaño | 202030514-5 |
 | Lucas Vicuña Fuenzalida | 201866671-8 |
 | d | 0 |
