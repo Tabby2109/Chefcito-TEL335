@@ -48,4 +48,4 @@ const database = module.exports = async () => {
 
 database();
 
-app.listen(port, () => console.log(`Example app listening at http://localhost:3000`));
+app.listen(port, () => console.log(`app listening at http://localhost:3000`));
