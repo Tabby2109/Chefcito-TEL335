@@ -7,7 +7,7 @@
 | Rodrigo Contreras Vega | 202010519-7 |
 | Tabata Ahumada Avendaño | 202030514-5 |
 | Lucas Vicuña Fuenzalida | 201866671-8 |
-| d | 0 |
+| Diego Flores Aceituno | 202004545-9|
 
 * **Tutor**: Victor Garay 
 * **Ayudante**: Joaquín Abarca 
