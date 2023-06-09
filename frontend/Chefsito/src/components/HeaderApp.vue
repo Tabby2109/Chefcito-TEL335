@@ -1,19 +1,19 @@
 <template>
   <nav class="navbar navbar-expand-lg navbar-light bg-light">
   <div class="container-fluid">
-    <a class="navbar-brand" href="#">
-      <img src="../assets/logo.svg" alt="" width="40" height="30">
+    <a class="navbar-brand" href="#" @click="()=>changePato(0)">
+      <img src="../assets/logo.svg" alt="" width="40" height="30" >
       Chefsito
     </a>
     
     <div class="d-flex justify-content-end">
       <div class="collapse navbar-collapse" id="navbarSupportedContent">
-          <ul  class="navbar-nav me-auto mb-2 mb-lg-0">
+          <ul  class="navbar-nav me-auto ml-2 mb-lg-0 gap-4">
             <li class="nav-item">
-              <a class="nav-link active" aria-current="page" href="#">Login</a>
+              <button class="nav-link active" aria-current="page" @click="()=>changePato(1)">Login</button>
             </li>
             <li class="nav-item">
-              <a class="nav-link" href="#">Registrate</a>
+              <button class="nav-link active" aria-current="page" @click="()=>changePato(2)">Register</button>
             </li>
           </ul>
       </div>
@@ -21,12 +21,21 @@
   </div>
 </nav>
 
-
 </template>
 
 <script>
   export default {
-    name: "HeaderApp"
+    name: "HeaderApp",
+    props: {
+      patricio: Number
+    },
+
+    
+    methods: {
+      changePato(n) {
+        this.$emit('changeLucas',n);
+      }
+    },
   }
 </script>
 
