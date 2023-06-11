@@ -1,5 +1,6 @@
 import { createRouter, createWebHistory } from 'vue-router'
 import HomeSignout from "../views/HomeSignout.vue"
+import HomeView from "../views/HomeView.vue"
 
 
 const routes = [
@@ -7,6 +8,11 @@ const routes = [
     path: '/',
     name: 'home',
     component: HomeSignout
+  },
+  {
+    path: '/menu',
+    name: 'menu',
+    component: HomeView
   }
 ]
 

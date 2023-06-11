@@ -20,10 +20,6 @@
   import RegisterView from '../components/RegisterView.vue'
   const tab = ref(0);
 
-  
-
-
-
   const changePato = (n) => {
     tab.value = n;
   }

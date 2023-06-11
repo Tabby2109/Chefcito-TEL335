@@ -20,6 +20,7 @@
 </template>
 
 <script>
+
 export default {
   data() {
     return {
@@ -29,15 +30,17 @@ export default {
   },
   methods: {
     login() {
-      if (this.email === 'admin@gmail.com' && this.password === 'password') {
+      if (this.email === 'admin@gmail.com' && this.password === 'pass') {
         console.log('funciono el login');
+        this.$router.push('/menu');
 
       } else {
 
         console.log('falló el login');
 
       }
-    }
+    },
+    
   }
 };
 </script>
