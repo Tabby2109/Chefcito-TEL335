@@ -1,39 +1,26 @@
-
-
 <template>
-  
-  <header>
-    <HeaderApp :patricio="tab" @changeLucas="changePato" />
-  </header>
-  <body v-if="tab!=0">
-    <LoginModal v-if="tab==1" />
-    <RegisterView v-else />
-
-  </body>
-  
+  <router-view/>
 </template>
 
-<script setup>
-  import { ref } from 'vue';
-  import HeaderApp from './components/HeaderApp.vue'
-  import LoginModal from './components/LoginModal.vue'
-  import RegisterView from './components/RegisterView.vue'
-  const tab = ref(0);
+<style lang="scss">
+#app {
+  font-family: Avenir, Helvetica, Arial, sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  text-align: center;
+  color: #2c3e50;
+}
 
-  
+nav {
+  padding: 30px;
 
+  a {
+    font-weight: bold;
+    color: #2c3e50;
 
-
-  const changePato = (n) => {
-    tab.value = n;
+    &.router-link-exact-active {
+      color: #42b983;
+    }
   }
-  
-</script>
-
-<style>
-@font-face {
-  font-family: "Queesha";
-  src: local("Queesha"),
-    url(./assets/fonts/Queensha.ttf) format("truetype");
 }
 </style>
