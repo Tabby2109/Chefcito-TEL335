@@ -10,9 +10,7 @@
     <RegisterView v-else />
 
   </body>
-  <button v-for="item in items" :key="item">
-    {{ item }}
-  </button>
+  
 </template>
 
 <script setup>
@@ -22,7 +20,7 @@
   import RegisterView from './components/RegisterView.vue'
   const tab = ref(0);
 
-  const items = [1,2,3,4,5,6,7,8,9,0,12,23,3123,12,31,23,12,31,2,31,2,4,1,451,23,41,234,12,34,123,41,234,23];
+  
 
 
 
@@ -32,6 +30,10 @@
   
 </script>
 
-<style scoped>
-
+<style>
+@font-face {
+  font-family: "Queesha";
+  src: local("Queesha"),
+    url(./assets/fonts/Queensha.ttf) format("truetype");
+}
 </style>

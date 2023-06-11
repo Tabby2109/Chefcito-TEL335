@@ -2,7 +2,6 @@
   <nav class="navbar navbar-expand-lg navbar-light bg-light">
   <div class="container-fluid">
     <a class="navbar-brand" href="#" @click="()=>changePato(0)">
-      <img src="../assets/logo.svg" alt="" width="40" height="30" >
       Chefsito
     </a>
     
@@ -10,10 +9,10 @@
       <div class="collapse navbar-collapse" id="navbarSupportedContent">
           <ul  class="navbar-nav me-auto ml-2 mb-lg-0 gap-4">
             <li class="nav-item">
-              <button class="nav-link active" aria-current="page" @click="()=>changePato(1)">Login</button>
+              <button type="button" class="btn btn-dark"  @click="()=>changePato(1)">Login</button>
             </li>
             <li class="nav-item">
-              <button class="nav-link active" aria-current="page" @click="()=>changePato(2)">Register</button>
+              <button type="button" class="btn btn-dark" @click="()=>changePato(2)">Register</button>
             </li>
           </ul>
       </div>
@@ -39,19 +38,17 @@
   }
 </script>
 
-<style>
+<style scoped>
 
-  .nav {
-    background-color: rgb(14, 13, 12);
-    font-size: xx-large;
-    width: flex;
-    padding: 20px;
-    overflow: hidden;
-  }
 
   a {
     padding-left: 10px;
   }
 
+  .navbar-brand {
+    font-family: "Queesha";
+    font-weight: 800;
+    font-size: x-large;
+  }
  
 </style>

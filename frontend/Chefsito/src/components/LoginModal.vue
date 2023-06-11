@@ -1,19 +1,21 @@
 <template>
-  <div>
-    <h2>Login</h2>
-    <form @submit.prevent="login">
-      <div>
-        <label for="username">Username:</label>
-        <input type="text" id="username" v-model="username" required>
-      </div>
-      <div>
-        <label for="password">Password:</label>
-        <input type="password" id="password" v-model="password" required>
-      </div>
-      <div>
-        <button type="submit">Login</button>
-      </div>
-    </form>
+  <div class="container-fluid">
+    <div class="abs-center">
+      
+      <form @submit="login">
+        <h1>Iniciar Sesión</h1>
+        <div class="mb-1">
+          <label for="email" class="form-label">Correo</label>
+          <input type="email" class="form-control" id="email" required v-model="email">
+        </div>
+        <div class="mb-4">
+          <label for="password" class="form-label">Contraseña</label>
+          <input type="password" class="form-control" id="pass" required v-model="password">
+          
+        </div>
+        <button type="submit" class="btn btn-light mb-3">Validar</button>
+      </form>
+    </div>
   </div>
 </template>
 
@@ -21,22 +23,19 @@
 export default {
   data() {
     return {
-      username: '',
+      email: '',
       password: ''
     };
   },
   methods: {
     login() {
-      // Lógica de autenticação
-      // Exemplo simplificado: Verificar se o username e password são válidos
-      if (this.username === 'admin' && this.password === 'password') {
-        // Autenticação bem-sucedida, realizar ação desejada
-        console.log('Login bem-sucedido');
-        // ... mais ações
+      if (this.email === 'admin@gmail.com' && this.password === 'password') {
+        console.log('funciono el login');
+
       } else {
-        // Autenticação falhou, exibir mensagem de erro ou realizar ação desejada
-        console.log('Login falhou');
-        // ... mais ações
+
+        console.log('falló el login');
+
       }
     }
   }
@@ -48,6 +47,19 @@ export default {
 h2 {
   font-size: 1.5rem;
   margin-bottom: 1rem;
+}
+
+h1 {
+  font-family: "Queesha";
+  color:#ccc;
+  font-size:330%;
+  text-align: center;
+}
+
+label{
+  color: #ccc;
+  font-size: 80%;
+  font-weight: 600;
 }
 
 form {
@@ -72,20 +84,24 @@ input {
 }
 
 button {
-  padding: 0.5rem 1rem;
-  font-size: 1rem;
-  background-color: #007bff;
-  color: #fff;
-  border: none;
-  cursor: pointer;
+  font-size: 120%;
+  font-weight: 600;
 }
 
 button:hover {
-  background-color: #0056b3;
+  background-color: #5c5c5c;
 }
 
 button:disabled {
-  background-color: #ccc;
+  background-color: #686868;
   cursor: not-allowed;
+}
+
+.abs-center {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 100vh;
+  padding-bottom: 20%;
 }
 </style>
