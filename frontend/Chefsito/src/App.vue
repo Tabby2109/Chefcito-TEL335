@@ -3,6 +3,11 @@
 </template>
 
 <style lang="scss">
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
 #app {
   font-family: Avenir, Helvetica, Arial, sans-serif;
   -webkit-font-smoothing: antialiased;
@@ -22,5 +27,15 @@ nav {
       color: #42b983;
     }
   }
+}
+@font-face {
+  font-family: "Queesha";
+  src: local("Queesha"),
+    url(./assets/fonts/Queensha.ttf) format("truetype");
+}
+@font-face {
+  font-family: "Tommy";
+  src: local("Tommy"),
+    url(./assets/fonts/MADETommySoft-Bold.ttf) format("truetype");
 }
 </style>

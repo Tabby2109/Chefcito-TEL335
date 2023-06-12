@@ -47,8 +47,8 @@
 
   .navbar-brand {
     font-family: "Queesha";
-    font-weight: 800;
-    font-size: x-large;
+    font-size: 230%;
+    color: black;
   }
  
 </style>

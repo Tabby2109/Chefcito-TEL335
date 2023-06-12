@@ -8,7 +8,7 @@
 
         <div class="container-fluid end">
 
-            <button type="button" class="btn btn-dark" @click="() => logout()">Cerrar Sesión</button>
+            <button type="button" class="btn btn-dark font" @click="() => logout()">Cerrar Sesión</button>
 
         </div>
 
@@ -37,8 +37,8 @@ a {
 
 .navbar-brand {
     font-family: "Queesha";
-    font-weight: 800;
-    font-size: x-large;
+    font-size: 230%;
+    color: black;
 }
 
 .space-evenly {
@@ -46,6 +46,9 @@ a {
 }
 .end {
     justify-content: end;
+}
+.font{
+    font-family: "Tommy";
 }
 
 </style>

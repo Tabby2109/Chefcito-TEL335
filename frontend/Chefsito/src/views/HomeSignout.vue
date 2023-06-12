@@ -27,9 +27,5 @@
 </script>
 
 <style>
-@font-face {
-  font-family: "Queesha";
-  src: local("Queesha"),
-    url(../assets/fonts/Queensha.ttf) format("truetype");
-}
+
 </style>
